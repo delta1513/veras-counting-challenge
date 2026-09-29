@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/*
+ * Size steps for bigger screens. Both conditions matter: a phone held in
+ * landscape is wide but very short, and must keep the small layout or the
+ * keyboard pushes the picture off screen. Only a screen with real vertical
+ * room — an iPad — gets the larger keys.
+ *
+ *   roomy    — iPad portrait (768 x 1024) and up
+ *   spacious — iPad landscape (1024 x 768) and up
+ */
+@custom-variant roomy (@media (min-width: 700px) and (min-height: 600px));
+@custom-variant spacious (@media (min-width: 1000px) and (min-height: 700px));
+
+@theme {
+  --color-honey: #ffc83d;
+  --color-honey-deep: #f2a20c;
+  --color-hive: #fff8e7;
+  --color-ink: #2b2118;
+  --color-go: #35b14a;
+  --color-stop: #d64545;
+  --font-sans: ui-rounded, "Nunito", "Segoe UI Rounded", system-ui, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--color-hive);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  /* Single-handed use: never let a mistaken swipe scroll or zoom the board. */
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  touch-action: manipulation;
+  user-select: none;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(25%);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.6);
+  }
+  60% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-bob {
+  animation: bob 0.9s ease-in-out infinite;
+}
+
+.animate-shake {
+  animation: shake 0.35s ease-in-out;
+}
+
+.animate-pop {
+  animation: pop 0.28s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-bob,
+  .animate-shake,
+  .animate-pop {
+    animation: none;
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "attribution": {
+    "author": "Sergio Palao",
+    "origin": "ARASAAC (http://arasaac.org)",
+    "owner": "Gobierno de Aragon",
+    "license": "CC BY-NC-SA 4.0"
+  },
+  "counters": {
+    "apple": {
+      "id": 2462
+    },
+    "banana": {
+      "id": 10218
+    },
+    "bee": {
+      "id": 2239
+    },
+    "butterfly": {
+      "id": 2465
+    },
+    "dog": {
+      "id": 2517
+    },
+    "duck": {
+      "id": 2563
+    },
+    "flower": {
+      "id": 3102
+    },
+    "frog": {
+      "id": 2543
+    },
+    "icecream": {
+      "id": 2420
+    },
+    "ladybug": {
+      "id": 2924
+    },
+    "pear": {
+      "id": 2561
+    },
+    "strawberry": {
+      "id": 2400
+    }
+  }
+}
